@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+table tr td {
+    border: solid blue 1px;
+    margin: 20px;
+}

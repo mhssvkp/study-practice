@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let cat of objCategories">
+      <a>
+        <div>
+          <img [src]="cat.path" routerLink='CategoryImg/{{cat.id}}' style="height: 150px;width: 150px">
+        </div>  
+        <div>
+          {{cat.name}} 
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+

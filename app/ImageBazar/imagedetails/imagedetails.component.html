@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <form name="img" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <table>
+                <tr>
+                    <td>Select</td>
+                    <td>Image Name</td>
+                    <td>Type</td>
+                    <td>Size</td>
+                    <td>Resolution</td>
+                </tr>
+
+                <tr *ngFor="let img of imageDetails">
+                    <td> <input type="radio" [(ngModel)]="img.imgid" name="imgid" value={{img.imgid}}/> </td>
+                    <td>{{img.name}}</td>
+                    <td>{{img.type}}</td>
+                    <td>{{img.size}}</td>
+                    <td>{{img.resolution}}</td>
+                </tr>
+
+            </table>
+
+            <button name="btnCart" type="submit">Add to Cart</button>
+
+
+            <div *ngIf="">
+                Please select one image!
+            </div>
+
+            <div *ngIf="f.touched &&  f.status=='VALID'">
+                Order submitted successfully.
+            </div>
+        </form>
+    </div>
+</div>

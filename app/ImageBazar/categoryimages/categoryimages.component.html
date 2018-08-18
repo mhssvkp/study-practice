@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let category of objCategoryImages">
+      <a>
+        <div>
+          <img [src]="category.path" routerLink="/ImageDetails/{{category.id}}" style="Height:150px;width:150px">
+        </div>
+        <div>
+         <a  (click)="openContactDetails(category.id)"> View Contact Details </a>
+        </div>
+
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- modal -->
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <!-- modal-dialog -->
+  <div class="modal-dialog" role="document">
+    <!-- modal-content -->
+    <div class="modal-content">
+      <!-- modal-header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Contact details</h4>
+      </div>
+
+      <!-- modal-body -->
+      <div class="modal-body">
+            <div>
+                Name: {{name}}
+            </div>      
+            <div>
+                Email: {{email}}
+            </div>
+            <div>
+                Mobile: {{mobile}}
+            </div>
+      </div>
+          <!-- modal-footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="closeModalDialog()" >Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
